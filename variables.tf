@@ -152,3 +152,9 @@ variable "force_destroy" {
   default     = false
   description = "Force destroy the CI/CD S3 bucket even if it's not empty"
 }
+
+variable "vpc_config" {
+  type        = any
+  default     = {}
+  description = "Configuration for the builds to run inside a VPC."
+}

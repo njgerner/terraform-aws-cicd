@@ -150,7 +150,7 @@ data "aws_iam_policy_document" "codebuild" {
 }
 
 module "codebuild" {
-  source                      = "git::https://github.com/cloudposse/terraform-aws-codebuild.git?ref=tags/0.17.0"
+  source                      = "git::https://github.com/brcnblc/terraform-aws-codebuild.git?ref=master"
   enabled                     = var.enabled
   namespace                   = var.namespace
   name                        = var.name
@@ -169,6 +169,7 @@ module "codebuild" {
   github_token                = var.github_oauth_token
   environment_variables       = var.environment_variables
   cache_bucket_suffix_enabled = var.codebuild_cache_bucket_suffix_enabled
+  vpc_config                  = var.vpc_config
 }
 
 resource "aws_iam_role_policy_attachment" "codebuild_s3" {
